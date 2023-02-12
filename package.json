@@ -11,6 +11,9 @@
     "lint:format": "prettier --loglevel warn --write \"./**/*.{js,jsx,ts,tsx,css,md,json}\" ",
     "lint": "npm run lint:format && npm run lint:fix ",
     "validate": "lint-staged",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "coverage": "vitest run --coverage",
     "type-check": "tsc",
     "prepare": "husky install"
   },
@@ -22,12 +25,16 @@
     "react-router-dom": "^6.8.1"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
     "@types/node": "^18.13.0",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.10",
+    "@types/testing-library__jest-dom": "^5.14.5",
     "@typescript-eslint/eslint-plugin": "^5.51.0",
     "@typescript-eslint/parser": "^5.51.0",
     "@vitejs/plugin-react": "^3.1.0",
+    "@vitest/ui": "^0.28.4",
     "eslint": "^8.34.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-import": "^2.27.5",
@@ -36,10 +43,12 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "husky": "^8.0.3",
+    "jsdom": "^21.1.0",
     "lint-staged": "^13.1.1",
     "prettier": "^2.8.4",
     "typescript": "^4.9.5",
-    "vite": "^4.1.1"
+    "vite": "^4.1.1",
+    "vitest": "^0.28.4"
   },
   "lint-staged": {
     "*.+(ts|tsx)": "npm run lint"
